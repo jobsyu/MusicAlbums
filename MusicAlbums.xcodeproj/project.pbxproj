@@ -15,6 +15,7 @@
 		86F4DF511CAE625600B814D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F4DF4F1CAE625600B814D7 /* LaunchScreen.storyboard */; };
 		86F4DF5C1CAE625600B814D7 /* MusicAlbumsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF5B1CAE625600B814D7 /* MusicAlbumsTests.m */; };
 		86F4DF671CAE625600B814D7 /* MusicAlbumsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF661CAE625600B814D7 /* MusicAlbumsUITests.m */; };
+		86F4DF771CAE62B600B814D7 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF761CAE62B600B814D7 /* HTTPClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		86F4DF621CAE625600B814D7 /* MusicAlbumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicAlbumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F4DF661CAE625600B814D7 /* MusicAlbumsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicAlbumsUITests.m; sourceTree = "<group>"; };
 		86F4DF681CAE625600B814D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86F4DF751CAE62B600B814D7 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		86F4DF761CAE62B600B814D7 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
+		86F4DF781CAE654E00B814D7 /* MusicAlbums-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicAlbums-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		86F4DF401CAE625600B814D7 /* MusicAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				86F4DF741CAE627800B814D7 /* API */,
 				86F4DF441CAE625600B814D7 /* AppDelegate.h */,
 				86F4DF451CAE625600B814D7 /* AppDelegate.m */,
 				86F4DF471CAE625600B814D7 /* ViewController.h */,
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				86F4DF421CAE625600B814D7 /* main.m */,
+				86F4DF781CAE654E00B814D7 /* MusicAlbums-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +144,15 @@
 				86F4DF681CAE625600B814D7 /* Info.plist */,
 			);
 			path = MusicAlbumsUITests;
+			sourceTree = "<group>";
+		};
+		86F4DF741CAE627800B814D7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				86F4DF751CAE62B600B814D7 /* HTTPClient.h */,
+				86F4DF761CAE62B600B814D7 /* HTTPClient.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +287,7 @@
 			files = (
 				86F4DF491CAE625600B814D7 /* ViewController.m in Sources */,
 				86F4DF461CAE625600B814D7 /* AppDelegate.m in Sources */,
+				86F4DF771CAE62B600B814D7 /* HTTPClient.m in Sources */,
 				86F4DF431CAE625600B814D7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "/Users/ycpjobs/Documents/Swift/MusicAlbums/MusicAlbums/MusicAlbums-Prefix.pch";
 				INFOPLIST_FILE = MusicAlbums/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jobsycp.MusicAlbums;
@@ -424,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "/Users/ycpjobs/Documents/Swift/MusicAlbums/MusicAlbums/MusicAlbums-Prefix.pch";
 				INFOPLIST_FILE = MusicAlbums/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jobsycp.MusicAlbums;

@@ -1,0 +1,21 @@
+//
+//  MusicAlbums-Prefix.pch
+//  MusicAlbums
+//
+//  Created by ycpjobs on 16/4/1.
+//  Copyright © 2016年 ycpjobs. All rights reserved.
+//
+
+#ifndef MusicAlbums_Prefix_pch
+#define MusicAlbums_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+
+#endif /* MusicAlbums_Prefix_pch */

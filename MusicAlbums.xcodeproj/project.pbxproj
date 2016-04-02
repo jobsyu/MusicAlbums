@@ -16,6 +16,8 @@
 		86F4DF5C1CAE625600B814D7 /* MusicAlbumsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF5B1CAE625600B814D7 /* MusicAlbumsTests.m */; };
 		86F4DF671CAE625600B814D7 /* MusicAlbumsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF661CAE625600B814D7 /* MusicAlbumsUITests.m */; };
 		86F4DF771CAE62B600B814D7 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF761CAE62B600B814D7 /* HTTPClient.m */; };
+		86F4DF7B1CAE6E8400B814D7 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF7A1CAE6E8400B814D7 /* Album.m */; };
+		86F4DF7E1CAE765500B814D7 /* AlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF7D1CAE765500B814D7 /* AlbumView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		86F4DF751CAE62B600B814D7 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		86F4DF761CAE62B600B814D7 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		86F4DF781CAE654E00B814D7 /* MusicAlbums-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicAlbums-Prefix.pch"; sourceTree = "<group>"; };
+		86F4DF791CAE6E8400B814D7 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		86F4DF7A1CAE6E8400B814D7 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		86F4DF7C1CAE765500B814D7 /* AlbumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumView.h; sourceTree = "<group>"; };
+		86F4DF7D1CAE765500B814D7 /* AlbumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		861A62721CAF7094000C5061 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86F4DF791CAE6E8400B814D7 /* Album.h */,
+				86F4DF7A1CAE6E8400B814D7 /* Album.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		861A62731CAF709F000C5061 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86F4DF7C1CAE765500B814D7 /* AlbumView.h */,
+				86F4DF7D1CAE765500B814D7 /* AlbumView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		861A62741CAF70A9000C5061 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				86F4DF471CAE625600B814D7 /* ViewController.h */,
+				86F4DF481CAE625600B814D7 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		861A62751CAF7223000C5061 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				86F4DF4F1CAE625600B814D7 /* LaunchScreen.storyboard */,
+				86F4DF4A1CAE625600B814D7 /* Main.storyboard */,
+				86F4DF521CAE625600B814D7 /* Info.plist */,
+				86F4DF4D1CAE625600B814D7 /* Assets.xcassets */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		86F4DF351CAE625600B814D7 = {
 			isa = PBXGroup;
 			children = (
@@ -105,15 +149,13 @@
 		86F4DF401CAE625600B814D7 /* MusicAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				861A62741CAF70A9000C5061 /* Controller */,
+				861A62731CAF709F000C5061 /* View */,
+				861A62721CAF7094000C5061 /* Model */,
 				86F4DF741CAE627800B814D7 /* API */,
+				861A62751CAF7223000C5061 /* Resource */,
 				86F4DF441CAE625600B814D7 /* AppDelegate.h */,
 				86F4DF451CAE625600B814D7 /* AppDelegate.m */,
-				86F4DF471CAE625600B814D7 /* ViewController.h */,
-				86F4DF481CAE625600B814D7 /* ViewController.m */,
-				86F4DF4A1CAE625600B814D7 /* Main.storyboard */,
-				86F4DF4D1CAE625600B814D7 /* Assets.xcassets */,
-				86F4DF4F1CAE625600B814D7 /* LaunchScreen.storyboard */,
-				86F4DF521CAE625600B814D7 /* Info.plist */,
 				86F4DF411CAE625600B814D7 /* Supporting Files */,
 			);
 			path = MusicAlbums;
@@ -287,7 +329,9 @@
 			files = (
 				86F4DF491CAE625600B814D7 /* ViewController.m in Sources */,
 				86F4DF461CAE625600B814D7 /* AppDelegate.m in Sources */,
+				86F4DF7E1CAE765500B814D7 /* AlbumView.m in Sources */,
 				86F4DF771CAE62B600B814D7 /* HTTPClient.m in Sources */,
+				86F4DF7B1CAE6E8400B814D7 /* Album.m in Sources */,
 				86F4DF431CAE625600B814D7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +560,7 @@
 				86F4DF6D1CAE625600B814D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86F4DF6E1CAE625600B814D7 /* Build configuration list for PBXNativeTarget "MusicAlbumsTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +569,7 @@
 				86F4DF701CAE625600B814D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86F4DF711CAE625600B814D7 /* Build configuration list for PBXNativeTarget "MusicAlbumsUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +578,7 @@
 				86F4DF731CAE625600B814D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

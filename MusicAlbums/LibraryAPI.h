@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Album.h"
 
 @interface LibraryAPI : NSObject
 
 +(LibraryAPI *)sharedInstance;
+-(NSArray *)getAlbums;
+-(void)addAlbums:(Album *)album atIndex:(int)index;
+-(void)deleteAlbumAtIndex:(int)index;
 
 @end

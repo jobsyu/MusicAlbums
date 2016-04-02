@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861A62781CAF78A8000C5061 /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 861A62771CAF78A8000C5061 /* LibraryAPI.m */; };
+		861A627C1CAF7A7E000C5061 /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 861A627B1CAF7A7E000C5061 /* PersistencyManager.m */; };
 		86F4DF431CAE625600B814D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF421CAE625600B814D7 /* main.m */; };
 		86F4DF461CAE625600B814D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF451CAE625600B814D7 /* AppDelegate.m */; };
 		86F4DF491CAE625600B814D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF481CAE625600B814D7 /* ViewController.m */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		861A62761CAF78A8000C5061 /* LibraryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryAPI.h; sourceTree = "<group>"; };
+		861A62771CAF78A8000C5061 /* LibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryAPI.m; sourceTree = "<group>"; };
+		861A627A1CAF7A7E000C5061 /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
+		861A627B1CAF7A7E000C5061 /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		86F4DF3E1CAE625600B814D7 /* MusicAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F4DF421CAE625600B814D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86F4DF441CAE625600B814D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -193,6 +199,10 @@
 			children = (
 				86F4DF751CAE62B600B814D7 /* HTTPClient.h */,
 				86F4DF761CAE62B600B814D7 /* HTTPClient.m */,
+				861A62761CAF78A8000C5061 /* LibraryAPI.h */,
+				861A62771CAF78A8000C5061 /* LibraryAPI.m */,
+				861A627A1CAF7A7E000C5061 /* PersistencyManager.h */,
+				861A627B1CAF7A7E000C5061 /* PersistencyManager.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -330,6 +340,8 @@
 				86F4DF491CAE625600B814D7 /* ViewController.m in Sources */,
 				86F4DF461CAE625600B814D7 /* AppDelegate.m in Sources */,
 				86F4DF7E1CAE765500B814D7 /* AlbumView.m in Sources */,
+				861A627C1CAF7A7E000C5061 /* PersistencyManager.m in Sources */,
+				861A62781CAF78A8000C5061 /* LibraryAPI.m in Sources */,
 				86F4DF771CAE62B600B814D7 /* HTTPClient.m in Sources */,
 				86F4DF7B1CAE6E8400B814D7 /* Album.m in Sources */,
 				86F4DF431CAE625600B814D7 /* main.m in Sources */,

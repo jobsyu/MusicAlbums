@@ -69,6 +69,11 @@
     }
 }
 
+-(void)saveAlbums
+{
+    [persistencyManager saveAlbums];
+}
+
 -(NSArray *)getAlbums
 {
     return [persistencyManager getAlbums];

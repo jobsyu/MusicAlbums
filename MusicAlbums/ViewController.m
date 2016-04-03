@@ -18,6 +18,9 @@
     NSArray *allAlbums;
     NSDictionary *currentAlbumData;
     int currentAlbumIndex;
+    UIToolbar *toolbar;
+    //we will use this array as a stack to push and pop operation for the undo option
+    NSMutableArray *undoStack;
 }
 
 @end
@@ -26,6 +29,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    toolbar = [[UIToolbar alloc] init];
+    UIBarButtonItem *undoItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(undoAction)];
+    undoItem.enabled = NO;
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAlbum)];
+    [toolbar setItems:@[undoItem,space,delete]];
+     [self.view addSubview:toolbar];
+     undoStack = [[NSMutableArray alloc] init];
     
     self.view.backgroundColor =  [UIColor colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
     currentAlbumIndex = 0;
@@ -50,6 +62,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
+-(void)viewWillLayoutSubviews
+{
+    toolbar.frame = CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44);
+    dataTable.frame = CGRectMake(0, 130, self.view.frame.size.width, self.view.frame.size.height-200);
+}
+
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -69,6 +87,46 @@
     
     // we have the data we need, let's refresh our tableview
     [dataTable reloadData];
+}
+
+-(void)addAlbums:(Album *)album atIndex:(int)index
+{
+    [[LibraryAPI sharedInstance] addAlbums:album atIndex:index];
+    currentAlbumIndex = index;
+    [self reloadScroller];
+}
+
+-(void)deleteAlbum
+{
+    Album *deleteAlbum = allAlbums[currentAlbumIndex];
+    
+    NSMethodSignature *sig = [self methodSignatureForSelector:@selector(addAlbums:atIndex:)];
+    NSInvocation *undoAction = [NSInvocation invocationWithMethodSignature:sig];
+    [undoAction setTarget:self];
+    [undoAction setSelector:@selector(addAlbums:atIndex:)];
+    [undoAction setArgument:&deleteAlbum atIndex:2];
+    [undoAction setArgument:&currentAlbumIndex atIndex:3];
+    [undoAction retainArguments];
+    
+    [undoStack addObject:undoAction];
+    
+    [[LibraryAPI sharedInstance] deleteAlbumAtIndex:currentAlbumIndex];
+    [self reloadScroller];
+    
+    [toolbar.items[0] setEnabled:YES];
+}
+
+-(void)undoAction
+{
+    if (undoStack.count > 0) {
+        NSInvocation *undoAction = [undoStack lastObject];
+        [undoStack removeLastObject];
+        [undoAction invoke];
+    }
+    
+    if (undoStack.count == 0) {
+        [toolbar.items[0] setEnabled:NO];
+    }
 }
 
 -(void)reloadScroller

@@ -39,6 +39,7 @@
     dataTable.backgroundView = nil;
     [self.view addSubview:dataTable];
     
+    [self loadPreviousState];
     scroller = [[HorizontalScroller alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 120)];
     scroller.backgroundColor = [UIColor colorWithRed:0.24f green:0.35f blue:0.49f alpha:1];
     scroller.delegate = self;
@@ -46,6 +47,12 @@
     
     [self reloadScroller];
     [self showDataForAlbumAtIndex:currentAlbumIndex];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(void)showDataForAlbumAtIndex:(int)albumIndex
@@ -71,6 +78,21 @@
     else if (currentAlbumIndex >= allAlbums.count) currentAlbumIndex = allAlbums.count -1;
     [scroller reload];
     
+    [self showDataForAlbumAtIndex:currentAlbumIndex];
+}
+
+#pragma mark -Memento Pattern
+-(void)saveCurrentState
+{
+    //When the user leaves the app and then comes back again, he wants it to be in the exact same state
+    //he left it. In order to do this we need to save the currently displayed album.
+    //Since it's only one piece of information we can use NSUserDefaults.
+    [[NSUserDefaults standardUserDefaults] setInteger:currentAlbumIndex forKey:@"currentAlbumIndex"];
+}
+
+-(void)loadPreviousState
+{
+    currentAlbumIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentAlbumIndex"];
     [self showDataForAlbumAtIndex:currentAlbumIndex];
 }
 
@@ -112,6 +134,9 @@
 }
 
 
-
+-(NSInteger)initialViewIndexForHorizontalScroller:(HorizontalScroller *)scroller
+{
+    return currentAlbumIndex;
+}
 
 @end

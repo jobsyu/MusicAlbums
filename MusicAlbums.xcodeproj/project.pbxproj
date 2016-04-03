@@ -10,6 +10,7 @@
 		861A62781CAF78A8000C5061 /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 861A62771CAF78A8000C5061 /* LibraryAPI.m */; };
 		861A627C1CAF7A7E000C5061 /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 861A627B1CAF7A7E000C5061 /* PersistencyManager.m */; };
 		861A627F1CAFE22A000C5061 /* Album+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 861A627E1CAFE22A000C5061 /* Album+TableRepresentation.m */; };
+		861A62821CAFF6DA000C5061 /* HorizontalScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 861A62811CAFF6DA000C5061 /* HorizontalScroller.m */; };
 		86F4DF431CAE625600B814D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF421CAE625600B814D7 /* main.m */; };
 		86F4DF461CAE625600B814D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF451CAE625600B814D7 /* AppDelegate.m */; };
 		86F4DF491CAE625600B814D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4DF481CAE625600B814D7 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 		861A627B1CAF7A7E000C5061 /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 		861A627D1CAFE22A000C5061 /* Album+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Album+TableRepresentation.h"; sourceTree = "<group>"; };
 		861A627E1CAFE22A000C5061 /* Album+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Album+TableRepresentation.m"; sourceTree = "<group>"; };
+		861A62801CAFF6DA000C5061 /* HorizontalScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScroller.h; sourceTree = "<group>"; };
+		861A62811CAFF6DA000C5061 /* HorizontalScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScroller.m; sourceTree = "<group>"; };
 		86F4DF3E1CAE625600B814D7 /* MusicAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F4DF421CAE625600B814D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86F4DF441CAE625600B814D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 			children = (
 				86F4DF7C1CAE765500B814D7 /* AlbumView.h */,
 				86F4DF7D1CAE765500B814D7 /* AlbumView.m */,
+				861A62801CAFF6DA000C5061 /* HorizontalScroller.h */,
+				861A62811CAFF6DA000C5061 /* HorizontalScroller.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				86F4DF7E1CAE765500B814D7 /* AlbumView.m in Sources */,
 				861A627C1CAF7A7E000C5061 /* PersistencyManager.m in Sources */,
 				861A62781CAF78A8000C5061 /* LibraryAPI.m in Sources */,
+				861A62821CAFF6DA000C5061 /* HorizontalScroller.m in Sources */,
 				86F4DF771CAE62B600B814D7 /* HTTPClient.m in Sources */,
 				861A627F1CAFE22A000C5061 /* Album+TableRepresentation.m in Sources */,
 				86F4DF7B1CAE6E8400B814D7 /* Album.m in Sources */,

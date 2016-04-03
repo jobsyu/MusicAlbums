@@ -7,15 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol HorizontalScrollerDelegate;
-
-@interface HorizontalScroller : UIView
-
-@property (weak) id<HorizontalScrollerDelegate> delegate;
-
--(void)reload;
-@end
+@class HorizontalScroller;
 
 @protocol HorizontalScrollerDelegate <NSObject>
 
@@ -33,3 +25,11 @@
 // ask the delegate for the index of the initial view to display. this method is optional
 -(NSInteger)initialViewIndexForHorizontalScroller:(HorizontalScroller *)scroller;
 @end
+
+@interface HorizontalScroller : UIView
+
+@property (weak) id<HorizontalScrollerDelegate> delegate;
+
+-(void)reload;
+@end
+

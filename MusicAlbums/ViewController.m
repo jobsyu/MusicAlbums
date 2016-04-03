@@ -30,15 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    toolbar = [[UIToolbar alloc] init];
-    UIBarButtonItem *undoItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(undoAction)];
-    undoItem.enabled = NO;
-    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAlbum)];
-    [toolbar setItems:@[undoItem,space,delete]];
-     [self.view addSubview:toolbar];
-     undoStack = [[NSMutableArray alloc] init];
-    
     self.view.backgroundColor =  [UIColor colorWithRed:0.76f green:0.81f blue:0.87f alpha:1];
     currentAlbumIndex = 0;
     
@@ -57,9 +48,18 @@
     scroller.delegate = self;
     [self.view addSubview:scroller];
     
-    [self reloadScroller];
+    //[self reloadScroller];
     [self showDataForAlbumAtIndex:currentAlbumIndex];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveCurrentState) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+    toolbar = [[UIToolbar alloc] init];
+    UIBarButtonItem *undoItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(undoAction)];
+    undoItem.enabled = NO;
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAlbum)];
+    [toolbar setItems:@[undoItem,space,delete]];
+    [self.view addSubview:toolbar];
+    undoStack = [[NSMutableArray alloc] init];
 }
 
 -(void)viewWillLayoutSubviews
